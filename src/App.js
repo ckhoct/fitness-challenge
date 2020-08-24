@@ -1,26 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./css/index.css"
+import { Container } from "react-bootstrap";
+import Card from "./components/Card";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container
+      className="d-flex flex-column justify-content-center align-items-center"
+      style={{ height: "100vh" }}
+    >
+      <h1 style={{color: '#fff'}}>Fitness Challenge</h1>
+      <Card />
+    </Container>
   );
-}
+};
 
 export default App;
