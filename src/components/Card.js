@@ -6,12 +6,16 @@ export default () => {
   const [currentItem, setCurrentItem] = useState("default");
 
   const item = config[currentItem];
-  const { title, subtitle, max, min, unit, img } = item;
+  const { title, subtitle, max, min, unit, img, weight } = item;
 
   const description = () => {
     if (subtitle) return subtitle;
     const reps = Math.floor(Math.random() * max);
     if (reps < min) return description();
+    if (weight) {
+      const kg = Math.floor(Math.random() * weight) + 1;
+      return `${kg}公斤 ${reps} ${unit}`;
+    }
     return `${reps} ${unit}`;
   };
 
